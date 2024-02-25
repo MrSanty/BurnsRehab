@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Definition: FC<Props> = ({ navigation }) => {
-  useNavigationChange(navigation, 2);
+  useNavigationChange(navigation, 1);
 
   return (
     <View style={styles.container}>

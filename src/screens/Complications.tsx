@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
 import LinearGradient from "react-native-linear-gradient";
 import ComplicationItem from "src/components/ComplicationItem";
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Complications: FC<Props> = ({ navigation }) => {
-  useNavigationChange(navigation, 5);
+  useNavigationChange(navigation, 2);
 
   return (
     <View style={styles.container}>
@@ -34,21 +34,45 @@ const Complications: FC<Props> = ({ navigation }) => {
         </View>
 
         <View style={styles.scroll}>
-          <ScrollView 
+          <ScrollView
             showsVerticalScrollIndicator={false}
             style={styles.scroll}
           >
             <ComplicationItem
               title="Funcionales"
               content="están asociadas a la perdida de los rangos de movilidad articular, amputaciones, disminución de la apertura de la boca, perdida de la audición y la visión, entre otras; en general son aquellas que pueden provocar algún grado de discapacidad y perdida de la independencia."
-              maxHeigth={100}
+              maxHeigth={120}
             />
             <ComplicationItem
               title="Estéticas"
               content="son aquellas que afectan la imagen y el esquema corporal, afectan tanto la calidad de vida y el bienestar emocional de quien la padece. Pueden estar provocadas por cicatrices, deformidades y alteraciones en la pigmentación de la piel."
               secondContent="Las secuelas estéticas de las quemaduras, además de estar asociadas con las secuelas funcionales, llevan a la persona a aislamiento debido al miedo o al rechazo y a los problemas psicológicos y emocionales derivados de esta lesión."
-              maxHeigth={145}
+              maxHeigth={200}
             />
+            <Pressable
+              onPress={() => navigation.navigate('Recomendaciones')}
+              style={({ pressed }) => [
+                styles.pressableButton,
+                {
+                  backgroundColor: pressed ? '#fff':'transparent',
+                  borderColor: '#FFF',
+                  borderWidth: 1
+                }
+              ]}
+            >
+              {({ pressed }) => (
+                <>
+                  <Text
+                    style={{
+                      color: pressed ? '#2E2F32' : '#fff',
+                      ...styles.contentText,
+                    }}
+                  >
+                    Recomendaciones
+                  </Text>
+                </>
+              )}
+            </Pressable>
           </ScrollView>
         </View>
       </LinearGradient>
@@ -97,6 +121,19 @@ const styles = StyleSheet.create({
   scroll: {
     width: '100%',
     height: '43%'
+  },
+  pressableButton: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    margin: 2,
+    paddingVertical: 5,
+    position: 'relative'
+  },
+  contentText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 17,
+    textAlign: 'justify'
   }
 })
 

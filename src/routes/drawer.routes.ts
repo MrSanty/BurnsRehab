@@ -1,57 +1,22 @@
 import Definition from "src/screens/Definition";
-import Clasification from "src/screens/Clasification/Clasification";
-import StackTypeOfBurns from "src/navigation/stack/StackTypeOfBurns";  
 import { RouteDrawer, RouteDrwerScreen } from "src/types/routes";
 import Complications from "src/screens/Complications";
-import StackBurnsPrevention from "src/navigation/stack/StackBurnsPrevention";
-import StackBurnsManage from "src/navigation/stack/StackBurnsManage";
 import References from "src/screens/References";
 import InterestedPage from "src/screens/InterestedPage";
 import AboutUs from "src/screens/AboutUs";
+import StackRecommendation from "src/navigation/stack/StackRecommendation";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
     key: 1,
     title: 'Inicio',
-    children: [
-      {
-        key: 2,
-        title: 'Definición',
-        children: null,
-        show: true
-      },
-      {
-        key: 3,
-        title: 'Tipos de quemaduras',
-        children: null,
-        show: true
-      },
-      {
-        key: 4,
-        title: 'Clasificación',
-        children: null,
-        show: true
-      },
-      {
-        key: 5,
-        title: 'Complicaciones',
-        children: null,
-        show: true
-      }
-    ],
-    show: true,
-    
-  },
-  {
-    key: 6,
-    title: 'Prevención de la quemadura',
     children: null,
     show: true,
     
   },
   {
-    key: 9,
-    title: '¿Qué hacer en caso de quemadura?',
+    key: 2,
+    title: 'Complicaciones de las quemaduras',
     children: null,
     show: true
   },
@@ -77,39 +42,21 @@ export const drawerRoutes: RouteDrawer[] = [
 
 export const drawerScreenRoutes: RouteDrwerScreen[] = [
   {
-    key: 2,
-    title: 'Definición',
+    key: 1,
+    title: 'Inicio',
     component: Definition,
     showHeader: true
   },
   {
-    key: 3,
-    title: 'Tipos de quemaduras',
-    component: StackTypeOfBurns,
-    showHeader: false
-  },
-  {
-    key: 4,
-    title: 'Clasificación',
-    component: Clasification,
-    showHeader: true
-  },
-  {
     key: 5,
-    title: 'Complicaciones',
+    title: 'Complicaciones de las quemaduras',
     component: Complications,
     showHeader: true
   },
   {
     key: 6,
-    title: 'Prevención de la quemadura',
-    component: StackBurnsPrevention,
-    showHeader: false
-  },
-  {
-    key: 9,
-    title: '¿Qué hacer en caso de quemadura?',
-    component: StackBurnsManage,
+    title: 'Recomendaciones',
+    component: StackRecommendation,
     showHeader: false
   },
   {

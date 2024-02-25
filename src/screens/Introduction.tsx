@@ -19,7 +19,7 @@ const Introduction = () => {
           style={styles.container}
         >
           <Image
-            source={require('src/assets/logos/burns-save-logo.png')}
+            source={require('src/assets/logos/burns-rehab-logo.png')}
             style={styles.logoImage}
           />
 

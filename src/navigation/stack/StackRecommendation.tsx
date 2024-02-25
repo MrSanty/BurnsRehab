@@ -1,11 +1,11 @@
-import { typesOfBurnsRoutes } from 'src/routes/typesOfBurns.routes';
+import { RecommendationsRoutes } from 'src/routes/Recommendations.routes';
 import DrawerScreenHeader from 'src/components/DrawerScreenHeader';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-const StackTypeOfBurns = () => {
+const StackRecommendation = () => {
   return (
     <Navigator
       screenOptions={{
@@ -14,7 +14,7 @@ const StackTypeOfBurns = () => {
       initialRouteName="Index"
     >
       {
-        typesOfBurnsRoutes.map((route) => (
+        RecommendationsRoutes.map((route) => (
           <Screen
             key={route.key}
             name={route.title}
@@ -25,4 +25,4 @@ const StackTypeOfBurns = () => {
     </Navigator>
   );
 };
-export default StackTypeOfBurns;
+export default StackRecommendation;
