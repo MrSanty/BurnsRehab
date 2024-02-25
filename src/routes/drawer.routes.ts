@@ -5,6 +5,7 @@ import References from "src/screens/References";
 import InterestedPage from "src/screens/InterestedPage";
 import AboutUs from "src/screens/AboutUs";
 import StackRecommendation from "src/navigation/stack/StackRecommendation";
+import ControlMonitoring from "src/screens/ControlMonitoring";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
@@ -17,6 +18,12 @@ export const drawerRoutes: RouteDrawer[] = [
   {
     key: 2,
     title: 'Complicaciones de las quemaduras',
+    children: null,
+    show: true
+  },
+  {
+    key: 3,
+    title: 'Control y seguimiento',
     children: null,
     show: true
   },
@@ -58,6 +65,12 @@ export const drawerScreenRoutes: RouteDrwerScreen[] = [
     title: 'Recomendaciones',
     component: StackRecommendation,
     showHeader: false
+  },
+  {
+    key: 3,
+    title: 'Control y seguimiento',
+    component: ControlMonitoring,
+    showHeader: true
   },
   {
     key: 10,
