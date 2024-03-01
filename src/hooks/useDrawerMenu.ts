@@ -12,7 +12,12 @@ export const useDrawerMenu = () => {
     let activeRoute = null;
 
     const listOfRoutes = drawerRoutes.map(route => {
-      route.show = true;
+      if (route.title === 'Inicio') {
+        activeRoute = route;
+        route.show = true;
+      } else {
+        route.show = false;
+      }
 
       return route;
     })

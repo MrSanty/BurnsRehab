@@ -29,12 +29,8 @@ const Introduction = () => {
               style={styles.containerText}
             >
               <Text style={styles.contentText}>
-                Dado el problema creciente de salud pública en torno a las quemaduras el cual ha sido
-                declarado por la Organización Mundial de la Salud, se ha creado esta aplicación móvil
-                donde usted podrá consultar diferentes tipos de información.
-              </Text>
-              <Text style={styles.contentText}>
-                relacionadas con el tema.
+                Dado el problema creciente de salud pública en torno a las quemaduras se ha creado esta aplicación móvil
+                donde usted podrá consultar diferentes tipos de información relacionadas con el tema.
               </Text>
             </View>
             <TouchableOpacity onPress={() => navigation.navigate('Main')} activeOpacity={0.8}>
@@ -51,8 +47,8 @@ const Introduction = () => {
         </ImageBackground>
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   flexContainer: {
@@ -86,6 +82,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginVertical: 20,
     width: '100%',
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -109,7 +106,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     color: '#fff',
     fontSize: 18,
-  }
-})
+  },
+});
 
 export default Introduction;

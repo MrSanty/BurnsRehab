@@ -1,14 +1,15 @@
 import { FC } from "react";
-import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
-import { RecommendationsRoutes } from 'src/routes/Recommendations.routes';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import DegreeItem from "src/components/DegreeItem";
 import { useNavigationChange } from 'src/hooks/useNavigationChange';
-import ButtonGradient from "src/components/ButtonGradient";
+import data from "./data";
 
-interface TypeOfBurnsProps {
+interface Props {
   navigation: any;
 }
 
-const Recommendations: FC<TypeOfBurnsProps> = ({ navigation }) => {
+const Clasification: FC<Props> = ({ navigation }) => {
+  useNavigationChange(navigation, 4);
 
   return (
     <View style={styles.container}>
@@ -16,35 +17,37 @@ const Recommendations: FC<TypeOfBurnsProps> = ({ navigation }) => {
         style={styles.containerImage}
       >
         <Image
-          source={require('src/assets/images/typesImages.png')}
+          source={require('src/assets/images/clasification.png')}
           style={styles.image}
         />
       </View>
 
       <View style={styles.card}>
         <View style={styles.cardTitle}>
-          <Text style={styles.title}>Recomendaciones</Text>
+          <Text style={styles.title}>CLASIFICACIÓN</Text>
+          <Text style={styles.title}>DE LAS QUEMADURAS</Text>
         </View>
-        <View style={styles.contentContainer}>
-          {
-            RecommendationsRoutes.slice(1).map(route => (
-              <ButtonGradient
-                key={route.key}
-                text={route.title}
-                onPress={() => navigation.navigate(route.title)}
-              />
-            ))
-          }
+
+        <View style={styles.scroll}>
+          <ScrollView 
+            showsVerticalScrollIndicator={false}
+            style={styles.scroll}
+          >
+            {
+              data.map((item) => (
+                <DegreeItem key={item.id} item={item} />
+              ))
+            }
+          </ScrollView>
         </View>
       </View>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    width: '100%'
+    flex: 1
   },
   containerImage: {
     height: 270
@@ -77,10 +80,12 @@ const styles = StyleSheet.create({
     minHeight: 25
   },
   contentContainer: {
-    alignItems: 'center',
-    flexDirection: 'column',
-    gap: 20
+    alignItems: 'center'
+  },
+  scroll: {
+    width: '100%',
+    height: '58%'
   }
-});
+})
 
-export default Recommendations;
+export default Clasification;

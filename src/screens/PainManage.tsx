@@ -8,6 +8,8 @@ interface Props {
 }
 
 const PainManage: FC<Props> = ({ navigation }) => {
+  useNavigationChange(navigation, 8);
+
   return (
     <View style={styles.container}>
       <ImageBackground

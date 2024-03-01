@@ -1,8 +1,9 @@
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import ButtonGradient from './ButtonGradient';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { Clasification } from 'src/types/clasification';
+import { useAccordionAnimate } from 'src/hooks/useAccordionAnimate';
 
 interface Props {
   item: Clasification
@@ -10,16 +11,7 @@ interface Props {
 
 const DegreeItem: FC<Props> = ({ item }) => {
   const [ isActive, setIsActive ] = useState(false);
-  const heightValue = useSharedValue(0);
-
-  const heightStyle = useAnimatedStyle(() => ({
-    height: heightValue.value,
-    overflow: 'hidden'
-  }))
-
-  useEffect(() => {
-    heightValue.value = withTiming(isActive ? item.maxHeigth : 0, { duration: 200 });
-  }, [ isActive ])
+  const accordionAnimate = useAccordionAnimate(0, isActive, item.maxHeigth);
 
   return (
     <View style={styles.container}>
@@ -29,7 +21,7 @@ const DegreeItem: FC<Props> = ({ item }) => {
         isAnimated={true}
         onPress={() => setIsActive(!isActive)}
       />
-      <Animated.View style={[ styles.content, heightStyle ]}>
+      <Animated.View style={[ styles.content, accordionAnimate ]}>
         <Text style={styles.textRegular}>
           <Image
             source={require('src/assets/icons/item.png')}

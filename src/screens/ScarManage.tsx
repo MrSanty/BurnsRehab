@@ -8,6 +8,8 @@ interface Props {
 }
 
 const ScarManage: FC<Props> = ({ navigation }) => {
+  useNavigationChange(navigation, 7);
+
   return (
     <View style={styles.container}>
       <ImageBackground

@@ -8,6 +8,8 @@ interface Props {
 }
 
 const TherapeuticExercise: FC<Props> = ({ navigation }) => {
+  useNavigationChange(navigation, 6);
+
   return (
     <View style={styles.container}>
       <ImageBackground
