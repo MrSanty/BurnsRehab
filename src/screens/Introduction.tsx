@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
     fontSize: 18,
     textAlign: 'justify',
-    textAlignVertical: 'center',
     lineHeight: 25,
     color: 'black',
   },

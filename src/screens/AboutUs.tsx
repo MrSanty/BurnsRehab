@@ -31,10 +31,7 @@ const AboutUs: FC<Props> = ({ navigation }) => {
             <Text style={styles.title}>DESARROLLADORES</Text>
           </View>
           <View style={styles.contentContainer}>
-            <CardUser name="Yaneth Mejía Rendón" />
             <CardUser name="Carlos Andrés Zapata" />
-            <CardUser name="Juan Camilo Uribe Villa" />
-            <CardUser name="Daniel Gutiérrez Duque" />
             <CardUser name="Santiago Quintero Rodriguez" />
           </View>
         </ScrollView>

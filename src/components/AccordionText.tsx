@@ -7,15 +7,15 @@ import { useAccordionAnimate } from 'src/hooks/useAccordionAnimate';
 interface Props {
   title: string;
   text: string;
-  maxHeigth: number;
-  isAllwaysActive?: boolean;
+  maxHeight: number;
+  isAlwaysActive?: boolean;
 }
 
-const AccordionText: FC<Props> = ({ title, text, maxHeigth, isAllwaysActive = false }) => {
+const AccordionText: FC<Props> = ({ title, text, maxHeight, isAlwaysActive: isAlwaysActive = false }) => {
   const [ isActive, setIsActive ] = useState(false);
-  const accordionAnimate = useAccordionAnimate(0, isActive, maxHeigth);
+  const accordionAnimate = useAccordionAnimate(0, isActive, maxHeight);
 
-  if (isAllwaysActive) {
+  if (isAlwaysActive) {
     return (
       <View style={styles.container}>
         <ButtonGradient

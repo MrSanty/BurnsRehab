@@ -30,42 +30,42 @@ const BurnCases: FC<Props> = ({ navigation }) => {
             <AccordionText
               title="Escaldaduras"
               text="Por contacto con líquidos calientes o vapor"
-              maxHeigth={30}
+              maxHeight={30}
             />
             <AccordionText
               title="Por frío"
-              text="La congelación por lesión celular directa por la cristalización del agua en el tejido y la lesión indirecta por isquemia y reperfusión"
-              maxHeigth={70}
+              text="La congelación por lesión celular directa por la cristalización del agua en el tejido y la lesión indirecta por isquemia y repercusión"
+              maxHeight={70}
             />
             <AccordionText
               title="Contacto"
               text="Lesión por contacto con objetos sólidos calientes o fríos como metales, vidrio, entre otros."
-              maxHeigth={60}
+              maxHeight={60}
             />
             <AccordionText
               title="Fuego"
-              text="Daño por llama debido a aire oxidado sobrecalentado como incendios."
-              maxHeigth={40}
+              text="Daño provocado por llamas."
+              maxHeight={40}
             />
             <AccordionText
               title="Químicos"
               text="Contacto con productos químicos nocivos como ácidos, lejía, solvente de pintura o gasolina."
-              maxHeigth={40}
+              maxHeight={40}
             />
             <AccordionText
               title="Electricidad"
               text="Electricidad transmisión de corriente eléctrica a través de la piel"
-              maxHeigth={40}
+              maxHeight={40}
             />
             <AccordionText
               title="Radiación"
-              text="Proveniente de radiografías, luz solar y otras fuentes de radiación ultravioleta, como una cama solar"
-              maxHeigth={60}
+              text="Provocada por luz solar u otras fuentes de radiación ultravioleta como camas solares, quemaduras provocadas por radiación ionizantes de equipos de medicina nuclear o por accidentes en plantas nucleares"
+              maxHeight={60}
             />
             <AccordionText
               title="Maltrato"
               text="Se tiene la intención de generar daño físico a la víctima."
-              maxHeigth={40}
+              maxHeight={40}
             />
           </ScrollView>
         </View>
