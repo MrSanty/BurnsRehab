@@ -83,8 +83,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   scroll: {
-    width: '100%',
-    height: '58%'
+    flex: 5/7
   }
 })
 

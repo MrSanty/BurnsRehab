@@ -11,7 +11,7 @@ interface Props {
 
 const DegreeItem: FC<Props> = ({ item }) => {
   const [ isActive, setIsActive ] = useState(false);
-  const accordionAnimate = useAccordionAnimate(0, isActive, item.maxHeigth);
+  const accordionAnimate = useAccordionAnimate(0, isActive);
 
   return (
     <View style={styles.container}>
