@@ -43,6 +43,30 @@ const InterestedPage: FC<Props> = ({ navigation }) => {
               }
             </Pressable>
           </View>
+          <View style={styles.listContainer}>
+            <Image
+              source={require('src/assets/icons/item.png')}
+              style={styles.itemIcon}
+            />
+            <Pressable
+              onPress={() => Linking.openURL('http://www.myhealth.gov.my/en/physiotherapy-management-burns-injury/')}
+            >
+              {
+                ({pressed}) => (
+                  <Text
+                    style={[
+                      styles.listText,
+                      {
+                        color: pressed ? '#FB0263' : '#2E2F32'
+                      }
+                    ]}
+                  >
+                    Myhealth ministry of health malaysia
+                  </Text>
+                )
+              }
+            </Pressable>
+          </View>
         </View>
       </ImageBackground>
     </View>

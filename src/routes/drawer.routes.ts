@@ -14,6 +14,12 @@ import SpecialAreas from "src/screens/Intervention/SpecialAreas";
 
 export const drawerRoutes: RouteDrawer[] = [
   {
+    key: 9,
+    title: 'Examen',
+    children: null,
+    show: true
+  },
+  {
     key: 1,
     title: 'Inicio',
     children: [
@@ -68,12 +74,6 @@ export const drawerRoutes: RouteDrawer[] = [
         show: true
       }
     ],
-    show: true
-  },
-  {
-    key: 9,
-    title: 'Examen',
-    children: null,
     show: true
   },
   {
